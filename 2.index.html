@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interaksi Komentar</title>
+    <style>
+        #komentar {
+            display: none;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #f9f9f9;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="toggleKomentar">Tampilkan Komentar</button>
+    <div id="komentar">
+        <p><strong>John Doe:</strong> Artikel yang sangat informatif, terima kasih!</p>
+        <p><strong>Jane Doe:</strong> Saya setuju dengan pendapatmu!</p>
+    </div>
+
+    <script>
+        document.getElementById("toggleKomentar").addEventListener("click", function() {
+            var komentar = document.getElementById("komentar");
+            if (komentar.style.display === "none") {
+                komentar.style.display = "block";
+                this.textContent = "Sembunyikan Komentar";
+            } else {
+                komentar.style.display = "none";
+                this.textContent = "Tampilkan Komentar";
+            }
+        });
+    </script>
+
+</body>
+</html>
