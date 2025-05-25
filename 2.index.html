@@ -1,45 +1,65 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interaksi Komentar</title>
-    <style>
-        #komentar {
-            display: none;
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin-top: 10px;
-            background-color: #f9f9f9;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog dengan Komentar Toggle</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background-color: #f9f9f9;
+    }
 
-        button {
-            padding: 10px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-    </style>
+    .comment-section {
+      margin-top: 20px;
+      display: none;
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .toggle-button {
+      padding: 10px 20px;
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .toggle-button:hover {
+      background-color: #005fa3;
+    }
+  </style>
 </head>
 <body>
 
-    <button id="toggleKomentar">Tampilkan Komentar</button>
-    <div id="komentar">
-        <p><strong>John Doe:</strong> Artikel yang sangat informatif, terima kasih!</p>
-        <p><strong>Jane Doe:</strong> Saya setuju dengan pendapatmu!</p>
-    </div>
+  <h1>Artikel Blog: Tips Desain Grafis</h1>
+  <p>Desain bukan hanya soal estetika, tapi juga komunikasi yang efektif.</p>
 
-    <script>
-        document.getElementById("toggleKomentar").addEventListener("click", function() {
-            var komentar = document.getElementById("komentar");
-            if (komentar.style.display === "none") {
-                komentar.style.display = "block";
-                this.textContent = "Sembunyikan Komentar";
-            } else {
-                komentar.style.display = "none";
-                this.textContent = "Tampilkan Komentar";
-            }
-        });
-    </script>
+  <button class="toggle-button" onclick="toggleComments()">Tampilkan Komentar</button>
+
+  <div id="commentSection" class="comment-section">
+    <p><strong>ali:</strong> artikel yang tidak menarik!</p>
+    <p><strong>raib:</strong> maaf kak baru belajar bikin</p>
+  </div>
+
+  <script>
+    function toggleComments() {
+      const section = document.getElementById('commentSection');
+      const button = document.querySelector('.toggle-button');
+
+      if (section.style.display === 'none' || section.style.display === '') {
+        section.style.display = 'block';
+        button.textContent = 'Sembunyikan Komentar';
+      } else {
+        section.style.display = 'none';
+        button.textContent = 'Tampilkan Komentar';
+      }
+    }
+  </script>
 
 </body>
 </html>
